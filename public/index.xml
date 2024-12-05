@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Darren&#39;s notes</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Darren&#39;s notes</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Dec 2024 17:14:34 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HowToSetupHugo</title>
+      <link>http://localhost:1313/posts/howtosetuphugo/</link>
+      <pubDate>Thu, 05 Dec 2024 17:14:34 +0800</pubDate>
+      <guid>http://localhost:1313/posts/howtosetuphugo/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
