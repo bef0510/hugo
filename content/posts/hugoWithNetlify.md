@@ -29,7 +29,7 @@ command = "hugo --gc --minify"
 ![](/images/howToSetupHugo/02.png)
 
 ## **Git Hub**
-[GitHub網站](https://github.com/ "GitHub 網站")
+[GitHub網站](https://github.com/ "GitHub")
 
 #### 1. 新增一個 **Repository**
 ![](/images/hugoWithNetlify/03.png)
@@ -39,7 +39,7 @@ command = "hugo --gc --minify"
 ![](/images/hugoWithNetlify/05.png)
 
 ## **Netlify**
-[Netlify網站](https://github.com/ "Netlify 網站")
+[Netlify網站](https://github.com/ "Netlify")
 
 #### 1. 使用 **Git Hub** 帳號登入
 ![](/images/hugoWithNetlify/06.png)
@@ -55,6 +55,10 @@ command = "hugo --gc --minify"
 ![](/images/hugoWithNetlify/10.png)
 ![](/images/hugoWithNetlify/11.png)
 ![](/images/hugoWithNetlify/12.png)
+
+#### 5. 查看網址
+[Darren's notes](https://darrenwang.netlify.app "Darren's notes")
+![](/images/hugoWithNetlify/13.png)
 
 ## 參考
 [Host on Netlify](https://gohugo.io/hosting-and-deployment/hosting-on-netlify/ "")
