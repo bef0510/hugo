@@ -104,3 +104,6 @@ Import-Module Terminal-Icons
 Set-PSReadLineOption -PredictionViewStyle ListView
 ```
 ![](/images/powerShell7Install/20.png)
+
+## 參考
+[美化你的 Windows Terminal (oh-my-posh, history autocomplete, terminal icons)](https://youtu.be/yKiOVSu9LQE "")
