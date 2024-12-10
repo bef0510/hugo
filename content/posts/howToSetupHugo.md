@@ -2,6 +2,8 @@
 date = '2024-12-05T17:14:34+08:00'
 draft = true
 title = '如何建置 Hugo'
+tags = ['Hugo', 'Taxonomy']
+categories = ['Hugo']
 +++
 
 ## 下載 **Hugo**

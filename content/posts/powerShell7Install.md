@@ -2,6 +2,8 @@
 date = '2024-12-09T11:35:38+08:00'
 draft = true
 title = 'PowerShell7 Install Oh-My-Posh'
+tags = ['PowerShell7', 'Oh-My-Posh']
+categories = ['Terminal']
 +++
 
 ## **PowerShell 7** 下載

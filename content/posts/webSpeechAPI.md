@@ -2,6 +2,8 @@
 date = '2024-12-06T15:31:24+08:00'
 draft = true
 title = '使用 Web Speech API'
+tags = ['Html', 'WebSpeechAPI']
+categories = ['Html']
 +++
 
 ## 使用 Web Speech API

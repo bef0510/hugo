@@ -2,6 +2,8 @@
 date = '2024-12-06T10:23:50+08:00'
 draft = true
 title = '使用 Netlify 架設 Hugo 專案'
+tags = ['Hugo', 'Taxonomy']
+categories = ['Hugo']
 +++
 
 ## 修改專案
