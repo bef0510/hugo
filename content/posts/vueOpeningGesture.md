@@ -1,14 +1,13 @@
 +++
 date = '2024-12-10T10:11:39+08:00'
 draft = true
-title = 'VueOpeningGesture'
+title = 'Vue 起手式'
 tags = ['Html', 'Vue', 'TypeScript']
 categories = ['Html', 'Vue']
 +++
 
-## **Vue** 起手式
+## **Vue** 建立專案
 
-### 建立專案
 #### 1. **using CDN**
 ```
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -16,9 +15,26 @@ categories = ['Html', 'Vue']
 
 #### 2. **using npm**
 ```
+cd projectPath
 npm create vue@latest projectName
 ```
 ![](/images/005_vueOpeningGesture/01.png)
+
+#### 3. **install**
+```
+npm i
+```
+![](/images/005_vueOpeningGesture/02.png)
+
+#### 4. 修改 **vite.config.ts → Port 3000**
+```
+...
+server: {
+  port: 3000,
+},
+...
+```
+![](/images/005_vueOpeningGesture/03.png)
 
 #### 基本架構
 ```
@@ -95,3 +111,6 @@ npm create vue@latest projectName
   const incrementd = computed(() => 	console.log(`The initial count is ${count.value}.`));
 </script>
 ```
+
+## 參考
+[Vue.js](https://cn.vuejs.org/guide/introduction.html "")

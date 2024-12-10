@@ -69,9 +69,12 @@ notepad $PROFILE
 
 #### 15. 修改 **$PROFILE** 檔
 ```
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\jandedobbeleer.omp.json"  | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\catppuccin_frappe.omp.json"  | Invoke-Expression
 ```
 ![](/images/004_powerShell7Install/15.png)
+
+#### 16. ***Oh My Posh theme*
+[Oh My Posh網站](https://ohmyposh.dev/docs/themes "Oh My Posh 網站")
 
 ## VS Code 修改亂碼
 

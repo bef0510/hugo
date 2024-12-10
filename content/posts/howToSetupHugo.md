@@ -10,7 +10,7 @@ categories = ['Hugo']
 [Hugo網站](https://gohugo.io/ "Hugo 網站")
 [直接下載](https://github.com/gohugoio/hugo/releases/tag/v0.139.3 "直接下載")
 
-#### 1. 進入 Hugo 網站
+#### 1. 進入 **Hugo** 網站
 ![](/images/001_howToSetupHugo/01.png)
 
 #### 2. **Installation → Windows**
