@@ -36,7 +36,7 @@ server: {
 ```
 ![](/images/005_vueOpeningGesture/03.png)
 
-### 基本架構
+## 基本架構
 ```
 <template>
   <!-- 只能有一個 root dom -->

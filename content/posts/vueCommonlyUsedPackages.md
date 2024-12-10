@@ -6,8 +6,6 @@ tags = ['Html', 'Vue', 'TypeScript']
 categories = ['Html', 'Vue']
 +++
 
-## **Vue** 常用套件
-
 ### **vue-official**
 ```
 VS Code Extensions 安裝
