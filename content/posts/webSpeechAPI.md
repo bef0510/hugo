@@ -126,11 +126,11 @@ input, button, select, textarea {
 ```
 
 #### 4. 網頁點擊錄音
-![](/images/webSpeechAPI/01.png)
+![](/images/003_webSpeechAPI/01.png)
 
 #### 5. 網頁點擊錄音
-![](/images/webSpeechAPI/02.png)
-![](/images/webSpeechAPI/03.png)
+![](/images/003_webSpeechAPI/02.png)
+![](/images/003_webSpeechAPI/03.png)
 
 ## 參考
 [SpeechRecognition](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition "")

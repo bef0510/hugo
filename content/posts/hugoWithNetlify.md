@@ -16,7 +16,7 @@ title = "Darren's notes"
 theme = 'paper'
 buildDrafts = true
 ```
-![](/images/howToSetupHugo/01.png)
+![](/images/002_hugoWithNetlify/01.png)
 
 #### 2. 新增 **netlify.toml**
 ```
@@ -28,39 +28,39 @@ TZ = "America/Los_Angeles"
 publish = "public"
 command = "hugo --gc --minify"
 ```
-![](/images/howToSetupHugo/02.png)
+![](/images/002_hugoWithNetlify/02.png)
 
 ## **Git Hub**
 [GitHub網站](https://github.com/ "GitHub")
 
 #### 1. 新增一個 **Repository**
-![](/images/hugoWithNetlify/03.png)
-![](/images/hugoWithNetlify/04.png)
+![](/images/002_hugoWithNetlify/03.png)
+![](/images/002_hugoWithNetlify/04.png)
 
 #### 2. **Upload files**
-![](/images/hugoWithNetlify/05.png)
+![](/images/002_hugoWithNetlify/05.png)
 
 ## **Netlify**
 [Netlify網站](https://github.com/ "Netlify")
 
 #### 1. 使用 **Git Hub** 帳號登入
-![](/images/hugoWithNetlify/06.png)
+![](/images/002_hugoWithNetlify/06.png)
 
 #### 2. 新增一個站台專案來源
-![](/images/hugoWithNetlify/07.png)
+![](/images/002_hugoWithNetlify/07.png)
 
 #### 3. 選取專案來源
-![](/images/hugoWithNetlify/08.png)
-![](/images/hugoWithNetlify/09.png)
+![](/images/002_hugoWithNetlify/08.png)
+![](/images/002_hugoWithNetlify/09.png)
 
 #### 4. 發佈專案
-![](/images/hugoWithNetlify/10.png)
-![](/images/hugoWithNetlify/11.png)
-![](/images/hugoWithNetlify/12.png)
+![](/images/002_hugoWithNetlify/10.png)
+![](/images/002_hugoWithNetlify/11.png)
+![](/images/002_hugoWithNetlify/12.png)
 
 #### 5. 查看網址
 [Darren's notes](https://darrenwang.netlify.app "Darren's notes")
-![](/images/hugoWithNetlify/13.png)
+![](/images/002_hugoWithNetlify/13.png)
 
 ## 參考
 [Host on Netlify](https://gohugo.io/hosting-and-deployment/hosting-on-netlify/ "")
