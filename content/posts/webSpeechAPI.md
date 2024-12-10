@@ -8,7 +8,7 @@ categories = ['Html']
 
 ## 使用 **Web Speech API**
 
-#### 1. **html**
+### 1. **html**
 ```
 <div>
 	<input id="text" type="text" class="ai-inputtext ai-input-text" />
@@ -28,7 +28,7 @@ categories = ['Html']
 </div>
 ```
 
-#### 2. **js**
+### 2. **js**
 ```
 $(function() {
 	// 初始設定
@@ -78,7 +78,7 @@ function onStartSpeechToTxt() {
 }
 ```
 
-#### 3. **css**
+### 3. **css**
 ```
 .ai-button {
     color: #fff;
@@ -125,10 +125,10 @@ input, button, select, textarea {
 }
 ```
 
-#### 4. 網頁點擊錄音
+### 4. 網頁點擊錄音
 ![](/images/003_webSpeechAPI/01.png)
 
-#### 5. 網頁點擊錄音
+### 5. 網頁點擊錄音
 ![](/images/003_webSpeechAPI/02.png)
 ![](/images/003_webSpeechAPI/03.png)
 

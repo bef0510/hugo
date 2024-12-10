@@ -8,25 +8,25 @@ categories = ['Html', 'Vue']
 
 ## **Vue** 建立專案
 
-#### 1. **using CDN**
+### 1. **using CDN**
 ```
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 ```
 
-#### 2. **using npm**
+### 2. **using npm**
 ```
-cd projectPath
 npm create vue@latest projectName
 ```
 ![](/images/005_vueOpeningGesture/01.png)
 
-#### 3. **install**
+### 3. **install**
 ```
+cd projectPath
 npm i
 ```
 ![](/images/005_vueOpeningGesture/02.png)
 
-#### 4. 修改 **vite.config.ts → Port 3000**
+### 4. 修改 **vite.config.ts → Port 3000**
 ```
 ...
 server: {
@@ -36,7 +36,7 @@ server: {
 ```
 ![](/images/005_vueOpeningGesture/03.png)
 
-#### 基本架構
+### 基本架構
 ```
 <template>
   <!-- 只能有一個 root dom -->
@@ -58,7 +58,7 @@ server: {
 </style>
 ```
 
-#### **Option API** 選項式
+### **Option API** 選項式
 ```
 <template>
   <button @click="increment">Count is: {{ count }}</button>
@@ -90,7 +90,7 @@ server: {
 </script>
 ```
 
-#### **Option API** 選項式
+### **Option API** 選項式
 ```
 <template>
   <button @click="increment">Count is: {{ count }}</button>
