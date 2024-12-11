@@ -36,6 +36,18 @@ server: {
 ```
 ![](/images/005_vueOpeningGesture/03.png)
 
+## DOM 掛載
+```
+<div id="app"></div>
+
+<script>
+import { createApp } from 'vue'
+import App from './App.vue'
+
+createApp(App).mount('#app')
+</script>
+```
+
 ## 基本架構
 ```
 <template>
@@ -65,52 +77,96 @@ server: {
 </template>
 
 <script>
-  export default {
-    // 宣告響應式資料的初始值
-    data() {
-      return {
-        count: 0
-      }
-    },
+export default {
+  // 宣告響應式資料的初始值
+  data() {
+    return {
+      count: 0
+    }
+  },
 
-    // methods 宣告在元件中要使用的方法
-    methods: {
-      increment() {
-        this.count++
-      }
-    },
+  // methods 宣告在元件中要使用的方法
+  methods: {
+    increment() {
+      this.count++
+    }
+  },
 
-    // mounted 回傳對資料的加工或計算結果
-    mounted() {
-      incrementd() {
-        console.log(`The initial count is ${this.count}.`)
-      }
+  // mounted 回傳對資料的加工或計算結果
+  mounted() {
+    incrementd() {
+      console.log(`The initial count is ${this.count}.`)
     }
   }
+}
 </script>
 ```
 
-### **Option API** 選項式
+### **Composition  API** 組合式，組合模板
 ```
 <template>
   <button @click="increment">Count is: {{ count }}</button>
 </template>
 
 <script setup>
-  import { computed, reactive, ref } from "vue";
+import { ref } from 'vue'
 
-  // 宣告響應式資料的初始值
-  const count = ref(0);
+export default {
+  setup() {
+    const count = ref(0)
 
-  // methods 宣告在元件中要使用的方法
-  function increment() {
-    count.value++;
+    function increment() {
+      // 在 JavaScript 中需要 .value
+      count.value++
+    }
+
+    // 要暴露 increment 函式
+    return {
+      count,
+      increment
+    }
   }
-
-  // mounted 回傳對資料的加工或計算結果
-  const incrementd = computed(() => 	console.log(`The initial count is ${count.value}.`));
+}
 </script>
 ```
+
+### **Composition  API** 組合式，單文件組合 **(SFC)**
+```
+<template>
+  <button @click="increment">Count is: {{ count }}</button>
+</template>
+
+<script setup>
+import { computed, reactive, ref } from "vue";
+
+// 宣告響應式資料的初始值
+const count = ref(0);
+
+// methods 宣告在元件中要使用的方法
+function increment() {
+  count.value++;
+}
+
+// mounted 回傳對資料的加工或計算結果
+const incrementd = computed(() => 	console.log(`The initial count is ${count.value}.`));
+</script>
+```
+
+### 擴充 **main.ts → error**
+```
+import './assets/main.css'
+
+import { createApp } from 'vue'
+import App from './App.vue'
+
+const app = createApp(App)
+app.mount('#app')
+
+app.config.errorHandler = (err) => {
+  console.log('errorHandler', err)
+}
+```
+![](/images/005_vueOpeningGesture/04.png)
 
 ## 參考
 [Vue.js](https://cn.vuejs.org/guide/introduction.html "")
