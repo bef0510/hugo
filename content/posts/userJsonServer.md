@@ -26,5 +26,67 @@ npm run server
 ```
 ![](/images/013_userJsonServer/03.png)
 
+### 5. 使用 **fetch api**
+```
+<template>
+  {{ state.prods }}
+</template>
+
+<script setup lang="ts">
+import { reactive } from 'vue';
+  const state = reactive({
+    prods: [],
+    isLoading: true,
+  });
+  fetch(`http://localhost:3005/prods`)
+    .then(res => res.json())
+    .then(data => {
+      state.prods = data;
+      state.isLoading = false;
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+</script>
+```
+
+### 6. 使用 **proxy**
+```
+<!-- vite.config.ts -->
+server: {
+  port: 3000,
+  proxy: {
+   '/api': {
+      target: 'http://localhost:3005',
+      changeOrigin: true,
+      rewrite: path => path.replace(/^\/api/, '')
+    }
+  }
+},
+
+<!-- vue -->
+<template>
+  {{ state.prods }}
+</template>
+
+<script setup lang="ts">
+import { reactive } from 'vue';
+  const state = reactive({
+    prods: [],
+    isLoading: true,
+  });
+  fetch(`api/prods`)
+    .then(res => res.json())
+    .then(data => {
+      state.prods = data;
+      state.isLoading = false;
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+</script>
+```
+![](/images/013_userJsonServer/04.png)
+
 ## 參考
 [json-server](https://www.npmjs.com/package/json-server "")
