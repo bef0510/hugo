@@ -113,25 +113,23 @@ onMounted(() => {
 </script>
 ```
 
-### **component** 傳遞多 **props**，不能傳 **object**
+### **component** 傳遞多 **props**
 ```
 <!-- ButtonCounter.vue -->
 <template>
-  <h4>{{ title }}</h4>
-  <h4>{{ id }}</h4>
+  <h4>{{ job.title }}</h4>
+  <h4>{{ job.id }}</h4>
 </template>
 
 <script setup lang="ts">
-  defineProps(['title', 'id']);
+  defineProps(job: Object);
 </script>
 
 -------------------------------------
 <!-- App.vue -->
 
 <template>
-  <ButtonCounter v-for="post in posts"
-    :id="post.id"
-    :title="post.title" />
+  <ButtonCounter v-for="post in posts" :post="post" />
 </template>
 
 <script setup lang="ts">
