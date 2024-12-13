@@ -75,7 +75,7 @@ import { reactive } from 'vue';
     prods: [],
     isLoading: true,
   });
-  fetch(`api/prods`)
+  fetch(`/api/prods`)
     .then(res => res.json())
     .then(data => {
       state.prods = data;
