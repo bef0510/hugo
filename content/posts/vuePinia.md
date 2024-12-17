@@ -332,3 +332,6 @@ export const useCounterStore = defineStore('counter', () => {
   });
 </script>
 ```
+
+## 參考
+[Pinia](https://pinia.vuejs.org/introduction.html "")
