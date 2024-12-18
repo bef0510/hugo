@@ -1,7 +1,7 @@
 +++
 date = '2024-12-18T14:25:00+08:00'
 draft = true
-title = 'VueNuxt3Route'
+title = 'Vue Nuxt3 Route'
 tags = ['Html', 'Vue', 'TypeScript', 'Nuxt3']
 categories = ['Html', 'Vue']
 +++
