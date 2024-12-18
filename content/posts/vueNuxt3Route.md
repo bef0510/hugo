@@ -116,5 +116,74 @@ component: AboutView,
 </script>
 ```
 
+## **route middleware**
+### 匿名路由 **middleware**
+```
+<!-- pages → index.vue-->
+
+<template>
+  <div class="m-6 bg-slate-50 py-24">
+    <div class="flex flex-col items-center">
+        <h1 class="text-6xl font-semibold text sky-400">Title</h1>
+        <p class="mt-4 text-9xl font-bold text-gray-600">Content</p>
+    </div>
+  </div>
+  <div class="flex flex-col items-center">
+    <div class="my-4 flex space-x-4">
+        <NuxtLink to="/about" class="px-4 py-2 bg-gray-300 text-gray-800 rounded-lg">前往 About</NuxtLink>
+        <NuxtLink to="/contact" class="px-4 py-2 bg-gray-300 text-gray-800 rounded-lg">前往 contact</NuxtLink>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+ definePageMeta({
+  middleware: defineNuxtRouteMiddleware(() => {
+    console.log('[匿名 middleware] 進入頁面')
+  })
+ })
+</script>
+```
+
+### 具名路由 **middleware**
+```
+<!-- middleware → random-redirect.js -->
+
+export default defineNuxtRouteMiddleware(() => {
+  if (Math.random() > 0.5) {
+    console.log('middleware Redirecting to /hero')
+    return navigateTo('/hero')
+  }
+
+  console.log('middleware not-thing happened')
+})
+
+<!-- 呼叫方式 about.vue -->
+
+<template>
+  <div class="m-6 mb-4 bg-slate-50 py-24">
+    <div class="flex flex-col items-center">
+        <h1 class="text-6xl font-semibold text-yellow-400">This is Darren</h1>
+        <p class="my-8 text-3xl text-gray-600">Here is /about</p>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+  definePageMeta({
+    middleware: ['random-redirect'] // 可用多個，以陣列方式
+  })
+</script>
+```
+
+### 全域路由 **middleware**
+```
+<!-- middleware → always-run.global.js -->
+
+export default defineNuxtRouteMiddleware((to, from) => {
+  console.log(`middleware to: ${to.path}, from: ${from.path}`)
+})
+```
+
 ## 參考
 [Nuxt3](https://nuxt.com.cn/docs/getting-started/installation "")
