@@ -139,8 +139,6 @@ app.config.errorHandler = (err) => {
 ```
 <!-- index.ts -->
 ...
-import NotFoundView from "@/components/NotFoundView.vue";
-
 const routes = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
@@ -148,7 +146,7 @@ const routes = createRouter({
   {
     path: "/:catchAll(.*)*",
     name: "not-found",
-    component: NotFoundView
+    component: import("../components/NotFoundView.vue")
     }
   ]
 });
@@ -167,6 +165,92 @@ export default routes;
 </script>
 ```
 ![](/images/016_vueRouter/03.png)
+
+### 10. 子路由
+```
+<!-- index.ts -->
+import { createRouter, createWebHashHistory } from "vue-router";
+import HomeView from "@/components/HomeView.vue";
+import AboutView from "@/views/AboutView.vue";
+import a from "@/views/about/a.vue";
+import b from "@/views/about/b.vue";
+import c from "@/views/about/c.vue";
+
+const routes = createRouter({
+  history: createWebHashHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: "/",
+      name: "home",
+      component: HomeView
+    },
+    {
+      path: "/about",
+      name: "about",
+      component: AboutView,
+      children: [
+        {
+          path: "a",
+          component: a
+        },
+        {
+          path: "b",
+          component: b
+        },
+        {
+          path: "c",
+          component: c
+        }
+      ]
+    },
+    {
+      path: "/:catchAll(.*)*",
+      name: "not-found",
+      component:  () => import("../views/NotFoundView.vue"),
+    }
+  ]
+});
+
+export default routes;
+
+-------------------------------------
+<!-- 呼叫 vue -->
+
+<template>
+  <nav>
+    <RouterLink to="/about/a">a</RouterLink>
+    <RouterLink to="/about/b">b</RouterLink>
+    <RouterLink to="/about/c">c</RouterLink>
+
+    <RouterView />
+  </nav>
+</template>
+
+<script setup lang="ts">
+  import { RouterLink, RouterView } from 'vue-router';
+</script>
+```
+
+### **useRoute、useRouter** 差異
+```
+seRoute 抓取網址參數
+useRouter 網址動作
+
+<!-- 換頁，會記鍵上一次頁面 -->
+router.push('/about/a');
+
+<!-- 換頁，不會記鍵上一次頁面，大多有參數時使用 -->
+router.replace('/about/a');
+```
+
+### **history** 改使用 **createWebHashHistory**
+```
+<!-- index.ts -->
+
+...
+history: createWebHashHistory(),
+...
+```
 
 ## 參考
 [路由](https://cn.vuejs.org/guide/scaling-up/routing "")
