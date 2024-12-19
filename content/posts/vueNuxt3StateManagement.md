@@ -168,5 +168,168 @@ export default function () {
 </template>
 ```
 
+## 使用 **pinia**
+```
+npm install -D pinia --force
+npm install -D @pinia/nuxt
+```
+
+### 1. 修改 **nuxt.config.ts**
+```
+export default defineNuxtConfig({
+  modules: [
+    ...
+    '@pinia/nuxt'
+  ],
+  compatibilityDate: '2024-11-01',
+  devtools: { enabled: true }
+})
+```
+
+### 2. 使用方式
+```
+<!-- stores → counter.js -->
+
+import { defineStore } from 'pinia'
+
+export const useCounterStore = defineStore('counter', () => {
+  const count = ref(0);
+
+  const doubleCount = computed(() => {
+    return count.value * 2
+  });
+
+  const increment = () => {
+    count.value++;
+  };
+
+  const decrement = () => {
+    count.value--;
+  };
+
+  return {
+    count,
+    increment,
+    decrement,
+    doubleCount
+  };
+});
+
+-------------------------------------
+<!-- counter.vue -->
+
+<template>
+  <div class="bg-white py-24">
+    <div class="flex flex-col items-center">
+      <span class="text-9xl font-semibold text-sky-600">{{ counterStore.count }}</span>
+      <div class="mt-8 flex flex-row">
+        <button class="font-base mx-2 rounded-full bg-sky-500 px-4 py-2 text-xl text-blue-500"
+          @click="counterStore.increment">增加</button>
+        <button class="font-base mx-2 rounded-full bg-sky-500 px-4 py-2 text-xl text-blue-500"
+          @click="counterStore.decrement">減少</button>
+      </div>
+      <p class="mt-4 text-slate-500">第一次進頁面，初始值為 0</p>
+      <div class="mt-8">
+        <NuxtLink to="/">回首頁</NuxtLink>
+      </div>
+    </div>
+  </div>
+</template>
+  
+<script setup lang="ts">
+  import { useCounterStore } from '~/stores/counter';
+  const counterStore = useCounterStore();
+</script>
+
+-------------------------------------
+<!-- show.vue -->
+
+<template>
+  <div class="bg-white py-24">
+    <div class="flex flex-col items-center">
+      <span class="text-9xl font-semibold text-sky-600">{{ counterStore.count }}</span>
+      <div class="mt-8">
+        <NuxtLink to="/">回首頁</NuxtLink>
+      </div>
+    </div>
+  </div>
+</template>
+  
+<script setup lang="ts">
+  import { useCounterStore } from '~/stores/counter';
+  const counterStore = useCounterStore();
+</script>
+```
+
+### 將 **stores** 資料夾加入 **auto import**
+```
+<!-- nuxt.config.ts -->
+
+export default defineNuxtConfig({
+  ...
+  devtools: { enabled: true },
+  imports: {
+    dirs: ['stores'] // 陣列方式將資料夾加入 auto import
+  }
+})
+
+-------------------------------------
+<!-- counter.vue -->
+
+<script setup lang="ts">
+  const counterStore = useCounterStore();
+</script>
+
+-------------------------------------
+<!-- show.vue -->
+  
+<script setup lang="ts">
+  const counterStore = useCounterStore();
+</script>
+```
+
+### **pinia** 持久化套件，用於 **local storeage**
+```
+npm install -D @pinia-plugin-persistedstate/nuxt
+```
+
+### 修改 **nuxt.config.ts** 重整後，值仍然存在，且存在 **local storeage**
+#### 建議搭配 **client only**
+```
+export default defineNuxtConfig({
+  modules: [
+    ...
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt'
+  ],
+  compatibilityDate: '2024-11-01',
+  devtools: { enabled: true },
+  imports: {
+    dirs: ['stores']
+  }
+})
+
+<!-- stores → counter.js -->
+import { defineStore } from 'pinia'
+
+export const useCounterStore = defineStore('counter', () => {
+
+    ...
+
+    return {
+      count,
+      increment,
+      decrement,
+      doubleCount
+    }
+  }, {
+    persist: {
+      key: 'counter',
+      storage: persistedState.localStorage
+    }
+});
+```
+![](/images/026_vueNuxt3StateManagement/02.png)
+
 ## 參考
 [Nuxt3](https://nuxt.com/docs/getting-started/state-management "")
